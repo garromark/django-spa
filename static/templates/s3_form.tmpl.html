@@ -1,0 +1,22 @@
+<!-- Expects to be bound to a S3ViewModel() object -->
+<form method="post" enctype="multipart/form-data"
+      class="form-horizontal">
+  <input type="hidden" name="key" value="dictations/${filename}">
+  <input type="hidden" name="AWSAccessKeyId" data-bind="value: accessKey">
+  <input type="hidden" name="acl" value="private">
+  <input type="hidden" name="policy" data-bind="value: policy">
+  <input type="hidden" name="signature" data-bind="value: signature">
+  <input type="hidden" name="Content-Type" data-bind="value: mimetype">
+  <input type="hidden" name="success_action_status" data-bind="value: successActionStatus">
+  <div class="control-group">
+    <label class="control-label" data-bind="text: settings().label"></label>
+    <div class="controls">
+      <span class="btn fileinput-button">
+        <span>Choose file</span>
+        <!-- The file input field used as target for the file upload widget -->
+        <input type="file" name="file">
+      </span>
+      <span data-bind="text: fileName"></span>
+    </div>
+  </div>
+</form>

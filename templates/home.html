@@ -1,0 +1,33 @@
+{% block js %}
+<script type="text/javascript" data-main="{{ STATIC_URL }}js/init.js" src="{{ STATIC_URL }}js/require.js"></script>
+{% endblock js %}
+{% block header %}
+<div class="navbar navbar-inverse navbar-static">
+  <div class="navbar-inner no-border-radius">
+    <div class="container-fluid" style="width: auto;">
+      {% include "includes/header/user-menu.html" %}
+    </div>
+  </div>
+</div>
+{% endblock header %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span2 offset1">
+    <ul class="nav nav-list" id="menu-tab">
+      <li class="active">
+        <a href="#upload-photo-tab" data-toggle="tab">Upload photo</a>
+      </li>
+    </ul>
+  </div>
+  <div class="span8">
+    <div class="t-box">
+      <div class="tab-content">
+        <div class="tab-pane active" id="upload-audio-tab">
+          <div data-bind="template: {name: 's3_form', data: s3, afterRender: s3().init}"
+               id="s3-form"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

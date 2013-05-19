@@ -1,0 +1,26 @@
+<form action="{% url 'django.contrib.auth.views.logout' %}"
+      method="post" name="logout_form" id="logout_form"
+      style="display:none">
+  {% csrf_token %}
+</form>
+<!-- Welcome menu, pulled to the right -->
+<ul class="nav pull-right">
+  <li class="dropdown">
+    <a id="welcome-menu" href="#" role="button" class="dropdown-toggle"
+       data-toggle="dropdown">
+      {% if user.first_name %}
+      Welcome, {{ user.first_name }}
+      {% else %}
+      Welcome, {{ user.username }}
+      {% endif %}
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu" role="menu" area-labelledby="welcome-menu">
+      <li role="presentation">
+	<a href="#" onclick="document.logout_form.submit(); return false;">
+	  Log Out
+	</a>
+      </li>
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block body %}
+{% if not user.is_authenticated %}
+{% include "landing.html" %}
+{% else %}
+{% include "home.html" %}
+{% endif %}
+{% endblock body %}

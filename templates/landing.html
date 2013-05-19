@@ -1,0 +1,48 @@
+<div class="home" style="background-image: {{ STATIC_URL }}images/noname.jpeg">
+
+  <div class="row-fluid">
+    <div class="span4 offset4">
+      <form method="post" action="/login/?next=/">{% csrf_token %}
+        {{ login_form.username }}
+        {{ login_form.password }}
+        <button class="btn btn-large btn-block btn-primary">Log in</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span4 offset4">
+      {% if registration_form.errors %}
+      <p class="errors">Please correct the errors below: {{ registration_form.non_field_errors }}</p>
+      {% endif %}
+      <form method="post" action="{% url 'registration_register' %}">
+        {% csrf_token %}
+        <p>
+	  {% if registration_form.username.errors %}
+          <p class="errors">{{ registration_form.username.errors.as_text }}</p>
+          {% endif %}
+          {{ registration_form.username }}
+        </p>
+        <p>
+	  {% if registration_form.email.errors %}
+          <p class="errors">{{ registration_form.email.errors.as_text }}</p>
+          {% endif %}
+          {{ registration_form.email }}
+        </p>
+        <p>
+	  {% if registration_form.password1.errors %}
+          <p class="errors">{{ registration_form.password1.errors.as_text }}</p>
+          {% endif %}
+          {{ registration_form.password1 }}
+        </p>
+        <p>
+	  {% if registration_form.password2.errors %}
+          <p class="errors">{{ registration_form.password2.errors.as_text }}</p>
+          {% endif %}
+          {{ registration_form.password2 }}
+        </p>
+        <button class="btn btn-large btn-primary btn-block">Create my account</button>
+      </form>
+    </div>
+  </div>
+</div>

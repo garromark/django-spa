@@ -1,0 +1,5 @@
+Thanks for your interest! Use the link below to activate your account.
+
+{{ site }}{% url 'registration.views.activate' activation_key %}
+
+See you soon!

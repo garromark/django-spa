@@ -1,0 +1,41 @@
+/* COLORS */
+/* FONTS */
+body {
+  background: white;
+  font-family: "Lato, Helvetica, serif";
+  font-size: 1em;
+  color: #2c3e50; }
+
+.error {
+  color: #e74c3c;
+  font-size: 1em; }
+
+.home {
+  color: white;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover; }
+
+.button {
+  text-transform: uppercase; }
+
+ul.errorlist {
+  color: #3498db;
+  margin: 0px; }
+  ul.errorlist li {
+    list-style-type: none; }
+
+.error {
+  color: #3498db; }
+
+.no-border-radius {
+  border-radius: 0px; }
+
+.t-box {
+  border-radius: 6px;
+  border: 1px solid #f4f7f8; }
+  .t-box .t-box-title {
+    padding-left: 10px;
+    color: #95a5a6; }

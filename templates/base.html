@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lib/humane/original.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lib/fileupload/css/jquery.fileupload-ui.css" />
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
+    <!-- file upload -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/csrf.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}lib/fileupload/js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}lib/fileupload/js/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}lib/fileupload/js/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}lib/fileupload/js/jquery.postmessage-transport.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}lib/fileupload/js/jquery.xdr-transport.js"></script>
+    <!-- end file upload -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/knockout-2.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/sammy-latest.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/sugar-1.3.9.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/infuser.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/TrafficCop.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/koExternalTemplateEngine.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}lib/humane/humane.min.js"></script>
+  </head>
+  <body>
+    {% block body %}
+    {% block header %}{% endblock header %}
+    <div class="container-fluid">
+      {% block content %}{% endblock content %}
+    </div>
+    {% block footer %}{% endblock  %}
+    {% endblock body %}
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <h1>Log in</h1>
+    {% if form.errors %}
+    {{ form.non_field_errors }}
+    {% endif %}
+    <form method="post" action="?next={{ next|default:"/" }}">{% csrf_token %}
+      {% if form.username.errors %}
+      {{ form.username.errors }}
+      {% endif %}
+      {{ form.username }}
+      {% if form.password.errors %}
+      {{ form.password.errors }}
+      {% endif %}
+      {{ form.password }}
+      <button class="btn btn-large btn-block btn-primary">Log in</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

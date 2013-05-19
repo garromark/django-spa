@@ -1,0 +1,73 @@
+south
+path.py
+
+django==1.5
+djangorestframework==2.2.7
+#PyYAML==3.10 # YAML support.
+#PIL==1.1.7 # Python Imaging Library
+#django-imagekit==2.0.2 # Library for thumbnail-making.
+
+################################################################################
+# Date/Datetime
+################################################################################
+# pytz # timezone management
+
+# We intentionally don't use the latest version (2.0) for dateutil.
+# I *think* version 2.0 is for Python 3.0+ *only* (the description
+# in PyPI reads "Extensions to the standard python 3.0+ datetime module"
+# and may not be fully compatible with Python <3.0. I have noticed some bugs
+# caused by the 2.0 version which disappear after downgrading to 1.5
+#python-dateutil==1.5
+
+################################################################################
+# Debugging, documentation, and convenient django extensions
+################################################################################
+Werkzeug==0.8.3
+#docutils==0.8.1
+#django-annoying==0.7.6
+django-extensions==1.0.0
+django-debug-toolbar==0.9.4
+django-debug-toolbar-autoreload
+# Allows for IP ranges
+# Useful for allowing Debug Toolbar when running on 0.0.0.0
+#IPy==0.75
+
+
+################################################################################
+# AWS
+################################################################################
+# boto==2.2.2
+# django-storages==1.1.4
+
+################################################################################
+# Production tools:
+################################################################################
+gunicorn==0.14.6 # Server we use on Heroku:
+
+################################################################################
+# Celery tools:
+################################################################################
+# kombu==2.1.8
+# celery==2.5.3
+# django-celery==2.5.5
+# Needed by celery, I think.
+
+
+################################################################################
+# Database
+################################################################################
+# posgtres adapter for python
+# We use 2.4.1 because higher versions break our testing framework.
+# See this bug report: https://code.djangoproject.com/ticket/16250
+psycopg2==2.4.1
+
+# Library for handling django's database configuration dictionary.
+# The recommended way to manage db configs on heroku
+# See: https://devcenter.heroku.com/articles/django-injection
+# dj-database-url==0.2.0
+
+
+################################################################################
+# Misc
+################################################################################
+# nltk==2.0.1rc3 # Language tools.
