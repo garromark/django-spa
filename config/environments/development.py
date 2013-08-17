@@ -32,7 +32,7 @@ DEFAULT_FROM_EMAIL ='testing@example.com'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cupidondb',
+        'NAME': 'djangospadb',
         'USER': 'postgres', # this is the system usernme, not the database username
         'PASSWORD': 'postgres', # postgres server seems to require a password
         'HOST': 'localhost',
