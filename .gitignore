@@ -1,3 +1,4 @@
+# Ignore django partially compiled files
 *.pyc
 *.pyo
 .DS_Store
@@ -11,3 +12,6 @@ m
 .#*
 *.*~
 venv
+# Ignore Eclipse files
+*.project
+*.pydevproject

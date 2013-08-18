@@ -15,12 +15,15 @@ framework.
 """
 import os
 
-if os.environ["DJANGO_ENVIRON"] == "DEV":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.development")
-elif os.environ["DJANGO_ENVIRON"] == "STAGING":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.staging")
-elif os.environ["DJANGO_ENVIRON"] == "PROD":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.production")
+try:
+    os.environ["DJANGO_SETTINGS_MODULE"]
+except KeyError:
+    if os.environ["DJANGO_ENVIRON"] == "DEV":
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.development")
+    elif os.environ["DJANGO_ENVIRON"] == "STAGING":
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.staging")
+    elif os.environ["DJANGO_ENVIRON"] == "PROD":
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.production")
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
