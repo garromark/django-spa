@@ -1,6 +1,6 @@
 from django.conf.urls import url, patterns
 from rest_framework.urlpatterns import format_suffix_patterns
-from apps.user import views
+from spa.apps.user import views
 
 urlpatterns = \
     patterns('',

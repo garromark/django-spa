@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import generics
-from apps.user.serializers import UserSerializer
-from apps.api.permissions import IsSelf
+from spa.apps.user.serializers import UserSerializer
+from spa.apps.api.permissions import IsSelf
 
 class UserList(generics.ListCreateAPIView):
     """

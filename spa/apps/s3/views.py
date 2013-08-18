@@ -3,7 +3,7 @@ import hmac, hashlib
 import time
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from apps.api.permissions import IsStaff
+from spa.apps.api.permissions import IsStaff
 from django.conf import settings
 
 SUCCESS_ACTION_STATUS = 200

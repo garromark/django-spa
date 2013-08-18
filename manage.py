@@ -8,11 +8,11 @@ if __name__ == '__main__':
         os.environ["DJANGO_SETTINGS_MODULE"]
     except KeyError:
         if os.environ["DJANGO_ENVIRON"] == "DEV":
-            os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.development")
+            os.environ.setdefault("DJANGO_SETTINGS_MODULE", "spa.config.environments.development")
         elif os.environ["DJANGO_ENVIRON"] == "STAGING":
-            os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.staging")
+            os.environ.setdefault("DJANGO_SETTINGS_MODULE", "spa.config.environments.staging")
         elif os.environ["DJANGO_ENVIRON"] == "PROD":
-            os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.environments.production")
+            os.environ.setdefault("DJANGO_SETTINGS_MODULE", "spa.config.environments.production")
 
     from django.core.management import execute_from_command_line
     execute_from_command_line(sys.argv)

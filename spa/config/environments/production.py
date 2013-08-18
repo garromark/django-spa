@@ -1,4 +1,4 @@
-from config.settings import *
+from spa.config.settings import *
 
 DATABASES = {
     'default': {

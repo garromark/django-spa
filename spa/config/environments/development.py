@@ -1,5 +1,5 @@
 from path import path
-from config.settings import *
+from spa.config.settings import *
 
 # if ALLOW_TEMPLATE_EXCEPTIONS then template throws exception on undefined
 # variables instead of failing silently, which is the default behavior.

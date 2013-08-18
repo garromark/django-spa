@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import AuthenticationForm
-from apps.registration.forms import RegistrationForm
+from spa.apps.registration.forms import RegistrationForm
 from django.template.response import TemplateResponse as TR
 
 def index(request, template_name="index.html"):

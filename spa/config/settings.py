@@ -9,9 +9,9 @@ import sys
 from path import path
 from django.conf import global_settings
 
-PROJECT_ROOT = path(__file__).abspath().dirname().dirname()
-sys.path.insert(0, PROJECT_ROOT / 'libs')
-sys.path.insert(0, PROJECT_ROOT / 'apps')
+PROJECT_ROOT = path(__file__).abspath().dirname().dirname().dirname()
+sys.path.insert(0, PROJECT_ROOT / 'spa/libs')
+sys.path.insert(0, PROJECT_ROOT / 'spa/apps')
 SITE_ID = 1
 
 DEBUG = True
@@ -78,11 +78,13 @@ STATIC_ROOT = PROJECT_ROOT / 'public/static'
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
+print PROJECT_ROOT / 'spa/static'
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    PROJECT_ROOT / 'spa/static',
     PROJECT_ROOT / 'static',
 )
 
@@ -114,15 +116,16 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'spa.config.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'spa.config.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    PROJECT_ROOT / 'spa/templates/',
     PROJECT_ROOT / 'templates/',
 )
 
@@ -145,11 +148,11 @@ INSTALLED_APPS = (
     'gunicorn',
 
     # our apps
-    'apps.s3',
-    'apps.index',
-    'apps.registration',
-    'apps.photo',
-    'apps.api',
+    'spa.apps.s3',
+    'spa.apps.index',
+    'spa.apps.registration',
+    'spa.apps.photo',
+    'spa.apps.api',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -186,7 +189,7 @@ LOGGING = {
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + \
-                              ('apps.index.context_processors.settings',)
+                              ('spa.apps.index.context_processors.settings',)
 
 
 ##########
