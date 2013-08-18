@@ -1,7 +1,7 @@
 south
 path.py
 
-django==1.5
+django==1.5.2
 djangorestframework==2.2.7
 #PyYAML==3.10 # YAML support.
 #PIL==1.1.7 # Python Imaging Library
