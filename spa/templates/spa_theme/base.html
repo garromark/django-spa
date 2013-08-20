@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lib/humane/original.css" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lib/fileupload/css/jquery.fileupload-ui.css" />
+    {% block css %}{% endblock %}
+    
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
     <!-- file upload -->
     <script type="text/javascript" src="{{ STATIC_URL }}js/csrf.js"></script>
@@ -35,6 +37,9 @@
     <script type="text/javascript" src="{{ STATIC_URL }}js/TrafficCop.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/koExternalTemplateEngine.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}lib/humane/humane.min.js"></script>
+    
+    {% block js_settings %}{% endblock %}
+    {% block js %}{% endblock %}
   </head>
   <body>
     {% block body %}
