@@ -1,4 +1,6 @@
-require(['viewmodels/appViewModel', 'domReady!'],
+if(_baseAppViewModel === undefined)
+    _baseAppViewModel = 'viewmodels/appViewModel';
+require([_baseAppViewModel, 'domReady!'],
 	function(avm) {
 	    // setup infuser to find our templates
 	    // all our knockout templates have the suffix tmpl.html

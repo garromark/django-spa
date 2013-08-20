@@ -78,7 +78,6 @@ STATIC_ROOT = PROJECT_ROOT / 'public/static'
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
-print PROJECT_ROOT / 'spa/static'
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
@@ -191,6 +190,10 @@ LOGGING = {
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + \
                               ('spa.apps.index.context_processors.settings',)
 
+################
+# SPA Settings #
+################
+SPA_BASE_THEME = "spa_theme/base.html"
 
 ##########
 # Celery #
