@@ -8,7 +8,7 @@ Installation
 
 Install the package via `pip`:
 
-    pip install -e ...
+    pip install -e git+https://github.com/garromark/django-spa.git@master#egg=django-spa
 
 Basic Templating and Knockout App Development
 ---------------------------------------------
